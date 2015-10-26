@@ -22,6 +22,7 @@ public class JdbcUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// @formatter:off
 		RowMapper<User> userDetailsRowMapper = (rs, i) -> new User(
 				rs.getString("ACCOUNT_NAME"),
 				rs.getString("PASSWORD"),
@@ -33,6 +34,7 @@ public class JdbcUserDetailsService implements UserDetailsService {
 		return jdbcTemplate.queryForObject(
 				"select * from ACCOUNT where ACCOUNT_NAME = ?",
 				userDetailsRowMapper, username);
+		// @formatter:on
 	}
 
 }

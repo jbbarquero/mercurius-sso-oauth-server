@@ -22,11 +22,13 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+		// @formatter:off
 		clients.inMemory()
 			.withClient("agente")
 			.secret("secreto")
 			.authorizedGrantTypes("authorization_code", "refresh_token", "password")
 			.scopes("openid");
+		// @formatter:on
 	}
 
 }
