@@ -1,0 +1,31 @@
+$ curl -X POST -vu cliente:razon http://localhost:9999/orthrus/oauth/token -H "Accept: application/json" -d "password=beneito&username=javier&grant_type=password&scope=openid&client_secret=razon&client_id=cliente" 
+* About to connect() to localhost port 9999 (#0)
+*   Trying ::1... connected
+* Connected to localhost (::1) port 9999 (#0)
+* Server auth using Basic with user 'cliente'
+> POST /orthrus/oauth/token HTTP/1.1
+> Authorization: Basic Y2xpZW50ZTpyYXpvbg==
+> User-Agent: curl/7.21.4 (universal-apple-darwin11.0) libcurl/7.21.4 OpenSSL/0.9.8z zlib/1.2.5
+> Host: localhost:9999
+> Accept: application/json
+> Content-Length: 103
+> Content-Type: application/x-www-form-urlencoded
+> 
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Cache-Control: no-store
+< Pragma: no-cache
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Thu, 05 Nov 2015 05:21:49 GMT
+< 
+* Connection #0 to host localhost left intact
+* Closing connection #0
+{"access_token":"9c3abf51-b80e-4c7e-ace8-67fafbc42feb","token_type":"bearer","refresh_token":"a27600b2-a289-4ee1-bd10-34000b675b9c","expires_in":43199,"scope":"openid"}
+$ 
