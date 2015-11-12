@@ -29,3 +29,8 @@ $ curl -X POST -vu cliente:razon http://localhost:9999/orthrus/oauth/token -H "A
 * Closing connection #0
 {"access_token":"9c3abf51-b80e-4c7e-ace8-67fafbc42feb","token_type":"bearer","refresh_token":"a27600b2-a289-4ee1-bd10-34000b675b9c","expires_in":43199,"scope":"openid"}
 $ 
+
+
+ * Then, run the authorization server and send the access token to an OAuth2 secured REST resource using:
+ $ curl http://localhost:9000/geryon/hello -H "Authorization: Bearer _INSERT TOKEN_"
+
